@@ -6,15 +6,15 @@ namespace GradeBook
     public class Book
     {
         private List<double> grades;
-        private string name;
+        public string Name;
 
         public Book(string name)
         {
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
-        public Statistics getStatistics()
+        public Statistics GetStatistics()
         {
             var result = new Statistics();
             result.Average = 0.0;
