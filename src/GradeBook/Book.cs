@@ -13,7 +13,7 @@ namespace GradeBook
             get; set;
         }
 
-        readonly string category = "Science";
+        public const string CATEGORY = "Science";
 
         public Book(string name)
         {
