@@ -25,7 +25,7 @@ namespace GradeBook
             {
                 if (grades[index] == 42.1)
                 {
-                    continue;
+                    goto done;
                 }
                 
                 result.Low = Math.Min(grades[index], result.Low);
@@ -35,7 +35,7 @@ namespace GradeBook
             };
 
             result.Average /= grades.Count;
-
+            done:
             return result;
         }
 
