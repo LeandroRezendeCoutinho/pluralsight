@@ -6,7 +6,20 @@ namespace GradeBook
     public class Book
     {
         private List<double> grades;
-        public string Name;
+        private string name;
+
+        public string Name
+        {
+            get => name;
+
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
+            }
+        }
 
         public Book(string name)
         {
@@ -14,7 +27,7 @@ namespace GradeBook
             Name = name;
         }
 
-        public void AddLetterGrade(char letter)
+        public void AddGrade(char letter)
         {
             switch (letter)
             {
