@@ -8,9 +8,9 @@ namespace GradeBook
         static void Main(string[] args)
         {
             var book = new Book("Scott's book");
-            book.addGrade(89.1);
-            book.addGrade(90.5);
-            book.addGrade(77.3);
+            book.AddGrade(89.1);
+            book.AddGrade(90.5);
+            book.AddGrade(77.3);
             var stats = book.GetStatistics();
 
             Console.WriteLine($"The average grade is {stats.Average:N1}");
