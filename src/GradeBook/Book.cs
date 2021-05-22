@@ -10,16 +10,10 @@ namespace GradeBook
 
         public string Name
         {
-            get => name;
-
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-            }
+            get; set;
         }
+
+        readonly string category = "Science";
 
         public Book(string name)
         {
