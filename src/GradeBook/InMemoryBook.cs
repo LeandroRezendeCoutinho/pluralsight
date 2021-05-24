@@ -18,15 +18,25 @@ namespace GradeBook
             set;
         }
     }
+
+    public abstract class Book : NamedObject
+    {
+        protected Book(string name) : base(name)
+        {
+        }
+
+        public abstract void AddGrade(double grade);
+
+    }
         
-    public class Book : NamedObject
+    public class InMemoryBook : Book
     {
         private List<double> grades;
 
         public const string CATEGORY = "Science";
         public event GradeAddedDelegate GradeAdded;
 
-        public Book(string name) : base(name)
+        public InMemoryBook(string name) : base(name)
         {
             grades = new List<double>();
             Name = name;
@@ -93,7 +103,7 @@ namespace GradeBook
             return result;
         }
 
-        public void AddGrade(double grade)
+        public override void AddGrade(double grade)
         {
             if (grade <= 100 && grade >= 0)
             {

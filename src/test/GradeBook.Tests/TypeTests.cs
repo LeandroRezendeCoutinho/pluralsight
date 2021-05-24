@@ -69,15 +69,15 @@ namespace GradeBook.Tests
         [Fact]
         public void CSharpCanPassByOut()
         {
-            Book book1;
+            InMemoryBook book1;
             GetBookSetNameByOut(out book1, "New Name");
             
             Assert.Equal("New Name", book1.Name);
         }
 
-        private void GetBookSetNameByOut(out Book book, string name)
+        private void GetBookSetNameByOut(out InMemoryBook inMemoryBook, string name)
         {
-            book = new Book(name);
+            inMemoryBook = new InMemoryBook(name);
         }
 
         [Fact]
@@ -89,9 +89,9 @@ namespace GradeBook.Tests
             Assert.Equal("New Name", book1.Name);
         }
 
-        private void GetBookSetNameByRef(ref Book book, string name)
+        private void GetBookSetNameByRef(ref InMemoryBook inMemoryBook, string name)
         {
-            book = new Book(name);
+            inMemoryBook = new InMemoryBook(name);
         }
         
         [Fact]
@@ -103,9 +103,9 @@ namespace GradeBook.Tests
             Assert.Equal("New Name", book1.Name);
         }
 
-        private void GetBookSetNameByValue(Book book, string name)
+        private void GetBookSetNameByValue(InMemoryBook inMemoryBook, string name)
         {
-            book.Name = name;
+            inMemoryBook.Name = name;
         }
 
         [Fact]
@@ -129,7 +129,7 @@ namespace GradeBook.Tests
             Assert.True(ReferenceEquals(book1, book2));
         }
 
-        private Book GetBook(string name)
+        private InMemoryBook GetBook(string name)
         {
             return new(name);
         }
